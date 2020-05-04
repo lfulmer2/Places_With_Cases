@@ -17,7 +17,7 @@
         android:layout_marginRight="105dp"
         android:layout_marginBottom="521dp"
         android:gravity="center"
-        android:text='Please select all establishments you would like to go to, then press "continue" once finished (Minimum: 1)'
+        android:text='Please select all establishments you would like to go to, then press "continue"'
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -40,9 +40,9 @@
         android:layout_above="@+id/countyMarketCheck"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="210dp"
-        android:layout_marginRight="210dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="212dp"
+        android:layout_marginRight="212dp"
+        android:layout_marginBottom="46dp"
         android:text="ALDI" />
 
     <CheckBox
@@ -52,9 +52,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="184dp"
-        android:layout_marginRight="184dp"
-        android:layout_marginBottom="275dp"
+        android:layout_marginEnd="187dp"
+        android:layout_marginRight="187dp"
+        android:layout_marginBottom="288dp"
         android:text="County Market" />
 
     <Button
@@ -68,5 +68,17 @@
         android:layout_marginRight="158dp"
         android:layout_marginBottom="145dp"
         android:text="continue" />
+
+    <CheckBox
+        android:id="@+id/walmartSupercenterCehck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="224dp"
+        android:layout_marginRight="224dp"
+        android:layout_marginBottom="215dp"
+        android:text="Walmart" />
 
 </RelativeLayout>

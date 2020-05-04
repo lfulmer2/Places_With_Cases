@@ -12,10 +12,12 @@ import android.widget.Toast;
 public class StorePicker extends AppCompatActivity {
 
     private Button continueButton;
-    private CheckBox saveALot, aldi, countyMarket;
+    private CheckBox saveALot, aldi, countyMarket, walmartSupercenter;
     public boolean saveALotChosen = false;
     public boolean aldiChosen = false;
     public boolean countyMarketChosen = false;
+    public boolean walmartSupercenterChosen = false;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,7 @@ public class StorePicker extends AppCompatActivity {
         saveALot = (CheckBox) findViewById(R.id.saveALotCheck);
         aldi = (CheckBox) findViewById(R.id.aldiCheck);
         countyMarket = (CheckBox) findViewById(R.id.countyMarketCheck);
+        walmartSupercenter = (CheckBox) findViewById(R.id.walmartSupercenterCehck);
 
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +45,9 @@ public class StorePicker extends AppCompatActivity {
                 }
                 if (countyMarket.isChecked()) {
                     countyMarketChosen = true;
+                }
+                if (walmartSupercenter.isChecked()) {
+                    walmartSupercenterChosen = true;
                 }
                 openViewOutput();
             }
