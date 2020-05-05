@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,9 @@ public class viewOutput extends AppCompatActivity {
         mileRadius = getIntent.getIntExtra(StorePicker.EXTRA_NUM,0);
         locationList = getIntent.getStringArrayListExtra(StorePicker.EXTRA_STRING_ARRAY);
         ArrayList<String> output =  Store.thePlacesWithCases(locationList, mileRadius);
+
+        TextView outputText = findViewById(R.id.ouptutText);
+        outputText.setText(Store.outputString(locationList,mileRadius));
 
 
     }

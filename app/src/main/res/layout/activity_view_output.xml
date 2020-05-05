@@ -7,16 +7,15 @@
     tools:context=".viewOutput">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="182dp"
-        android:layout_height="185dp"
+        android:id="@+id/ouptutText"
+        android:layout_width="269dp"
+        android:layout_height="395dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="120dp"
-        android:layout_marginRight="120dp"
-        android:layout_marginBottom="326dp"
-        android:text="In this activity we are going to display the nearby stores based on the location(s) and distance given. We are going to display the number of COVID cases in Store's county along with the store. "
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="222dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

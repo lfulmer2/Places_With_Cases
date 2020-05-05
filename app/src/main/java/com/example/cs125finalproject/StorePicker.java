@@ -34,22 +34,22 @@ public class StorePicker extends AppCompatActivity {
         Intent getIntent = getIntent();
         mileRadius = getIntent.getIntExtra(MainActivity.EXTRA_NUM, 0);
 
-        continueButton = (Button) findViewById(R.id.continueButton);
-        saveALot = (CheckBox) findViewById(R.id.saveALotCheck);
-        aldi = (CheckBox) findViewById(R.id.aldiCheck);
-        countyMarket = (CheckBox) findViewById(R.id.countyMarketCheck);
-        walmartSupercenter = (CheckBox) findViewById(R.id.walmartSupercenterCehck);
+        continueButton = findViewById(R.id.continueButton);
+        saveALot = findViewById(R.id.saveALotCheck);
+        aldi = findViewById(R.id.aldiCheck);
+        countyMarket = findViewById(R.id.countyMarketCheck);
+        walmartSupercenter = findViewById(R.id.walmartSupercenterCehck);
 
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!saveALot.isChecked() && !aldi.isChecked() && !countyMarket.isChecked()) {
+                if (!saveALot.isChecked() && !aldi.isChecked() && !countyMarket.isChecked() && !walmartSupercenter.isChecked()) {
                     Toast.makeText(StorePicker.this, "Error: You did not choose a store, please select one.", Toast.LENGTH_LONG).show();
                     return;
                 }
                 if (saveALot.isChecked()) {
                     saveALotChosen = true;
-                    locationList.add("Save-a-Lot");
+                    locationList.add("Save-a-lot");
                 }
                 if (aldi.isChecked()) {
                     aldiChosen = true;

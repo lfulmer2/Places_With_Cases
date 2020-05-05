@@ -113,7 +113,7 @@ public class Store {
         String str = "";
 
         for (int i = 0; i < output.size(); i++) {
-            str = output.get(i);
+            str += output.get(i) + "/n";
         }
         return str;
     }
