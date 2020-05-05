@@ -23,7 +23,8 @@ public class viewOutput extends AppCompatActivity {
         locationList = getIntent.getStringArrayListExtra(StorePicker.EXTRA_STRING_ARRAY);
 
         TextView outputText = findViewById(R.id.ouptutText);
-        outputText.setText(Store.outputString(locationList,mileRadius));
+        outputText.setText(Store.outputString(locationList, mileRadius));
+
 
 
     }

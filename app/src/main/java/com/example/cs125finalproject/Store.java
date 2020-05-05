@@ -16,6 +16,7 @@ public class Store {
 
     static List<Store> storeList = new ArrayList<Store>();
 
+
     public Store(String setCounty, String setAddress, String setChain, int setDistance) {
         county = setCounty;
         address = setAddress;
@@ -40,13 +41,13 @@ public class Store {
              new Store("Champaign", "2610 N Prospect Ave, Champaign, IL 61822", "Walmart Supercenter", 15),
              new Store("Champaign", "505 S Dunlap Ave, Savoy, IL 61874", "Walmart Supercenter", 15),
              new Store("Champaign", "845 Broadmeadow Rd, Rantoul, IL 61866", "Walmart Supercenter", 15),
-             new Store("Vermillion","2 E Main St, Danville, IL 61832", "Save-a-lot", 30),
-             new Store("Vermillion", "4101 N Vermilion St UNIT A, Danville, IL 61832", "ALDI", 30),
-             new Store("Vermillion", "502 S Gilbert Street, Danville, IL 61832", "ALDI", 30),
-             new Store("Vermillion", "2917 N Vermilion St, Danville, IL 61832", "County Market", 30),
+             new Store("Vermilion","2 E Main St, Danville, IL 61832", "Save-a-lot", 30),
+             new Store("Vermilion", "4101 N Vermilion St UNIT A, Danville, IL 61832", "ALDI", 30),
+             new Store("Vermilion", "502 S Gilbert Street, Danville, IL 61832", "ALDI", 30),
+             new Store("Vermilion", "2917 N Vermilion St, Danville, IL 61832", "County Market", 30),
              new Store("Piatt", "422 S Market St, Monticello, IL 61856", "County Market", 30),
-             new Store("Vermillion", "1628 Georgetown Rd, Tilton, IL 61833", "County Market", 30),
-             new Store("Vermillion", "4101 N Vermilion St UNIT A, Danville, IL 6183", "Walmart Supercenter", 30),
+             new Store("Vermilion", "1628 Georgetown Rd, Tilton, IL 61833", "County Market", 30),
+             new Store("Vermilion", "4101 N Vermilion St UNIT A, Danville, IL 6183", "Walmart Supercenter", 30),
              new Store ("Macon", "1185 W Grand Ave, Decatur, IL 62522", "County Market", 50),
              new Store ("Coles", "551 West Lincoln Ave, Charleston, IL, 61920", "County Market", 50),
              new Store("Coles", "2000 Western Ave, Mattoon, IL, 61938", "County Market", 50),
@@ -86,37 +87,45 @@ public class Store {
     }
 
     public int getCovidCases() {
-        return casesPerCounty.get(getCounty());
+        int count = 0;
+        String county = getCounty();
+        if(casesPerCounty.get(county) != null) {
+            count = casesPerCounty.get(county);
+        }
+
+        return count;
+
     }
 
-    public static ArrayList<String> thePlacesWithCases(ArrayList<String> a, int distance) {
+    public static ArrayList<String> thePlacesWithCases(ArrayList<String> chainName, int distance) {
 
-        ArrayList<String> b = new ArrayList<>();
+        ArrayList<String> toReturn = new ArrayList<>();
 
         for (int i = 0; i < storeList.size() ; i++) {
             String str = storeList.get(i).getChain();
             int storeDistance = storeList.get(i).getDistance();
-            for (int j = 0; j < a.size(); j++) {
-                if (storeDistance <= distance && str.equals(a.get(j))) {
-                    b.add("A " + str +  " store" + " is located approximately " +  String.valueOf(storeDistance) + " miles away and has "
-                            + String.valueOf(storeList.get(i).getCovidCases()) + " cases in its county");
+            for (int j = 0; j < chainName.size(); j++) {
+                if (storeDistance <= distance && str.equals(chainName.get(j))) {
+                    toReturn.add("A " + str +  " store" + " with address " + storeList.get(i).getAddress() + " is located within or approximately " +  String.valueOf(storeDistance)
+                            + " miles away from Champaign and has " + String.valueOf(storeList.get(i).getCovidCases()) + " cases in the county containing this store");
                 }
             }
         }
-        return b;
+        return toReturn;
     }
 
     public static String outputString(ArrayList<String> a, int distance) {
 
         ArrayList<String> output = thePlacesWithCases(a, distance);
 
-        String str = "";
+        String str = "The following store have been identified based on you selections:\n\n";
 
         for (int i = 0; i < output.size(); i++) {
-            str += output.get(i) + "/n";
+            str += output.get(i) + "\n\n";
         }
         return str;
     }
+
 
 
 

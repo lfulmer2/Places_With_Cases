@@ -18,10 +18,11 @@ import java.util.Map;
 
 
 public class Covid {
-    private HashMap<String,Integer> casesPerCounty;
     private RequestQueue mQueue;
 
     public Map<String,Integer> jsonParseCovidCases(Context context) {
+        final Map<String, Integer> casesPerCounty = new HashMap<>();
+
         mQueue = Volley.newRequestQueue(context);
 
         String url = "https://www.dph.illinois.gov/sitefiles/COVIDTestResults.json";
@@ -39,7 +40,7 @@ public class Covid {
                         int numCases = covidCases.getInt("confirmed_cases");
                         casesPerCounty.put(countyName, numCases);
                     }
-
+                    Store.initialize(casesPerCounty);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
