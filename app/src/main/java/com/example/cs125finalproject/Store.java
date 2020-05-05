@@ -107,7 +107,7 @@ public class Store {
             for (int j = 0; j < chainName.size(); j++) {
                 if (storeDistance <= distance && str.equals(chainName.get(j))) {
                     toReturn.add("A " + str +  " store" + " with address " + storeList.get(i).getAddress() + " is located within or approximately " +  String.valueOf(storeDistance)
-                            + " miles away from Champaign and has " + String.valueOf(storeList.get(i).getCovidCases()) + " cases in the county containing this store");
+                            + " miles away from Champaign and has " + String.valueOf(storeList.get(i).getCovidCases()) + " cases in the county containing this store.");
                 }
             }
         }

@@ -20,6 +20,8 @@ import java.util.Map;
 public class Covid {
     private RequestQueue mQueue;
 
+    // Referred to the following site https://www.youtube.com/watch?v=y2xtLqP8dSQ for producing this code
+
     public Map<String,Integer> jsonParseCovidCases(Context context) {
         final Map<String, Integer> casesPerCounty = new HashMap<>();
 
