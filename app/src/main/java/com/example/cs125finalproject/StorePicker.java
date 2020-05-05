@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -24,13 +25,14 @@ public class StorePicker extends AppCompatActivity {
     public boolean countyMarketChosen = false;
     public boolean walmartSupercenterChosen = false;
     public int mileRadius;
-    public ArrayList<String> locationList;
+    public ArrayList<String> locationList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store__picker);
-
         Intent getIntent = getIntent();
         mileRadius = getIntent.getIntExtra(MainActivity.EXTRA_NUM, 0);
 
