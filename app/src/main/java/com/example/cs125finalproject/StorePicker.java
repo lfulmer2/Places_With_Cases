@@ -9,9 +9,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class StorePicker extends AppCompatActivity {
+
+    public static final String EXTRA_STRING_ARRAY = "com.example.cs125finalproject.EXTRA_STRING_ARRAY";
+    public static final String EXTRA_NUM = "com.example.cs125finalproject.EXTRA_NUM";
 
     private Button continueButton;
     private CheckBox saveALot, aldi, countyMarket, walmartSupercenter;
@@ -19,13 +23,16 @@ public class StorePicker extends AppCompatActivity {
     public boolean aldiChosen = false;
     public boolean countyMarketChosen = false;
     public boolean walmartSupercenterChosen = false;
-    public ArrayList<String> groceryStorelist;
+    public int mileRadius;
+    public ArrayList<String> locationList;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store__picker);
 
+        Intent getIntent = getIntent();
+        mileRadius = getIntent.getIntExtra(MainActivity.EXTRA_NUM, 0);
 
         continueButton = (Button) findViewById(R.id.continueButton);
         saveALot = (CheckBox) findViewById(R.id.saveALotCheck);
@@ -42,19 +49,19 @@ public class StorePicker extends AppCompatActivity {
                 }
                 if (saveALot.isChecked()) {
                     saveALotChosen = true;
-                    groceryStorelist.add("Save-a-lot");
+                    locationList.add("Save-a-Lot");
                 }
                 if (aldi.isChecked()) {
                     aldiChosen = true;
-                    groceryStorelist.add("ALDI");
+                    locationList.add("ALDI");
                 }
                 if (countyMarket.isChecked()) {
                     countyMarketChosen = true;
-                    groceryStorelist.add("County Market");
+                    locationList.add("County Market");
                 }
                 if (walmartSupercenter.isChecked()) {
                     walmartSupercenterChosen = true;
-                    groceryStorelist.add("Walmart Supercenter");
+                    locationList.add("Walmart Supercenter");
                 }
                 openViewOutput();
             }
@@ -62,6 +69,8 @@ public class StorePicker extends AppCompatActivity {
     }
     public void openViewOutput() {
         Intent openView = new Intent(this, viewOutput.class);
+        openView.putStringArrayListExtra(EXTRA_STRING_ARRAY, locationList);
+        openView.putExtra(EXTRA_NUM, mileRadius);
         startActivity(openView);
     }
 }
