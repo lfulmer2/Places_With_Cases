@@ -64,4 +64,6 @@ public class StorePicker extends AppCompatActivity {
         Intent openView = new Intent(this, viewOutput.class);
         startActivity(openView);
     }
+
+
 }

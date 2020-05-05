@@ -12,6 +12,4 @@ public class viewOutput extends AppCompatActivity {
         setContentView(R.layout.activity_view_output);
     }
 
-    
-
 }
