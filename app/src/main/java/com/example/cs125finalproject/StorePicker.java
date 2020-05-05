@@ -73,4 +73,6 @@ public class StorePicker extends AppCompatActivity {
         openView.putExtra(EXTRA_NUM, mileRadius);
         startActivity(openView);
     }
+
+
 }
