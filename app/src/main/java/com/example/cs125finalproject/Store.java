@@ -89,7 +89,7 @@ public class Store {
         return casesPerCounty.get(getCounty());
     }
 
-    public ArrayList<String> thePlacesWithCases(ArrayList<String> a, int distance) {
+    public static ArrayList<String> thePlacesWithCases(ArrayList<String> a, int distance) {
 
         ArrayList<String> b = new ArrayList<>();
 
@@ -98,12 +98,26 @@ public class Store {
             int storeDistance = storeList.get(i).getDistance();
             for (int j = 0; j < a.size(); j++) {
                 if (storeDistance <= distance && str.equals(a.get(j))) {
-                    b.add("A " + str +  " store" + " is located " +  String.valueOf(storeDistance) + " miles away and has "
+                    b.add("A " + str +  " store" + " is located approximately " +  String.valueOf(storeDistance) + " miles away and has "
                             + String.valueOf(storeList.get(i).getCovidCases()) + " cases in its county");
                 }
             }
         }
         return b;
     }
+
+    public static String outputString(ArrayList<String> a, int distance) {
+
+        ArrayList<String> output = thePlacesWithCases(a, distance);
+
+        String str = "";
+
+        for (int i = 0; i < output.size(); i++) {
+            str = output.get(i);
+        }
+        return str;
+    }
+
+
 
 }

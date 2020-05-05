@@ -20,6 +20,8 @@ public class viewOutput extends AppCompatActivity {
         Intent getIntent = getIntent();
         mileRadius = getIntent.getIntExtra(StorePicker.EXTRA_NUM,0);
         locationList = getIntent.getStringArrayListExtra(StorePicker.EXTRA_STRING_ARRAY);
+        ArrayList<String> output =  Store.thePlacesWithCases(locationList, mileRadius);
+
 
     }
 
