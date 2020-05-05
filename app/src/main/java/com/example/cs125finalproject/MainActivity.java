@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(openStore);
     }
 
+    // Research for the different android widgets was mainly on youtube, some credit to Coding In Flow.
 
 
 }
