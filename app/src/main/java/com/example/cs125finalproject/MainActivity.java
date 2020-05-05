@@ -28,22 +28,23 @@ public class MainActivity extends AppCompatActivity {
         fifteenMiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openStorePicker();
                 mileRadius = 15;
+                openStorePicker();
+
             }
         });
         thirtyMiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openStorePicker();
                 mileRadius = 30;
+                openStorePicker();
             }
         });
         fiftyMiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openStorePicker();
                 mileRadius = 50;
+                openStorePicker();
             }
         });
     }

@@ -22,4 +22,7 @@ public class viewOutput extends AppCompatActivity {
         locationList = getIntent.getStringArrayListExtra(StorePicker.EXTRA_STRING_ARRAY);
 
     }
+
+    
+
 }

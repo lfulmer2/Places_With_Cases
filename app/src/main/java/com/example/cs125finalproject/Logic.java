@@ -27,11 +27,13 @@ public class Logic {
         ArrayList<String> CountyMarket = new ArrayList<String>();
         CountyMarket.add("331 E Stoughton St, Champaign, IL 61820");
         CountyMarket.add("2901 W Kirby Ave, Champaign, IL 61821");
-        CountyMarket.add("County Market, 1201 E Grove Ave, Rantoul, IL 61866");
+        CountyMarket.add("1201 E Grove Ave, Rantoul, IL 61866");
+        CountyMarket.add("1628 Georgetown Road, Tilton, IL 61833");
         ArrayList<String> WalmartSupercenter = new ArrayList<String>();
         WalmartSupercenter.add("100 S High Cross Rd, Urbana, IL 61802 ");
         WalmartSupercenter.add("2610 N Prospect Ave, Champaign, IL 61822");
         WalmartSupercenter.add("505 S Dunlap Ave, Savoy, IL 61874");
+        WalmartSupercenter.add("845 Broadmeadow Rd, Rantoul, IL 61866");
         fifteenMileGroceries.put("Save-a-Lot", SaveALot);
         fifteenMileGroceries.put("ALDI",ALDI);
         fifteenMileGroceries.put("County Market", CountyMarket);
@@ -50,12 +52,41 @@ public class Logic {
         CountyMarket30.add("1628 Georgetown Rd, Tilton, IL 61833");
         ArrayList<String> WalmartSuperCenter30 = new ArrayList<String>();
         WalmartSuperCenter30.add("4101 N Vermilion St UNIT A, Danville, IL 6183");
+        thirtyMileGroceries.put("Save-a-lot", SaveALot30);
+        thirtyMileGroceries.put("ALDI", ALDI30);
+        thirtyMileGroceries.put("County Market", CountyMarket30);
+        thirtyMileGroceries.put("Walmart Supercenter", WalmartSuperCenter30);
 
         //for approximately 50 miles of distance
 
-        ArrayList<String> SaveALot50 = new ArrayList<>();
-        SaveALot50.add("");
+        ArrayList<String> CountyMarket50 = new ArrayList<>();
+        CountyMarket50.add("1185 W Grand Ave, Decatur, IL 62522");
+        CountyMarket50.add("551 West Lincoln Ave, Charleston, IL, 61920");
+        CountyMarket30.add("2000 Western Ave, Mattoon, IL, 61938");
 
+        ArrayList<String> ALDI50 = new ArrayList<>();
+        ALDI50.add("510 E. Pershing Rd, Decatur, IL, 62526");
+        ALDI50.add("2075 Mount Zion Rd, Decatur, IL, 62526");
+        ALDI50.add("2240 Shawnee Dr, Charleston, IL, 61920");
+        ALDI50.add("1220 Fort Worth Way, Mattoon, IL, 61938");
+        ALDI50.add("301 Greenbriar Dr, Normal, IL, 61761");
+        ALDI50.add("1025 Wylie Dr, Bloomington, IL, 61705");
+
+        ArrayList<String> SaveALot50 = new ArrayList<>();
+        SaveALot50.add("2280 E William St, Decatur, IL 62521");
+        SaveALot50.add("1175 W Grand Ave, Decatur, IL, 62521");
+
+        ArrayList<String> WalmartSuperCenter50 = new ArrayList<>();
+        WalmartSuperCenter50.add("4224 N Prospect St, Decatur, IL, 62526");
+        WalmartSuperCenter50.add("2250 Lincoln Ave, Charleston, IL, 61920");
+        WalmartSuperCenter50.add("101 Dettro Dr, Mattoon, IL, 61928");
+        WalmartSuperCenter50.add("15015 Us Highway 150, Paris, IL, 61944");
+        WalmartSuperCenter50.add("300 Greenbriar Dr, Normal, IL, 61761");
+        WalmartSuperCenter50.add("2225 W Market St, Bloomington, IL, 61705");
+        fiftyMileGroceries.put("Save-a-lot", SaveALot50);
+        fiftyMileGroceries.put("ALDI", ALDI50);
+        fiftyMileGroceries.put("CountyMarket", CountyMarket50);
+        fiftyMileGroceries.put("Walmart Supercenter", WalmartSuperCenter50);
     }
 
     public Map<String, ArrayList<String>> returnLocations() {

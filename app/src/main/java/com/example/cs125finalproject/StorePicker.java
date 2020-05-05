@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class StorePicker extends AppCompatActivity {
 
     private Button continueButton;
@@ -17,6 +19,7 @@ public class StorePicker extends AppCompatActivity {
     public boolean aldiChosen = false;
     public boolean countyMarketChosen = false;
     public boolean walmartSupercenterChosen = false;
+    public ArrayList<String> groceryStorelist;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -39,15 +42,19 @@ public class StorePicker extends AppCompatActivity {
                 }
                 if (saveALot.isChecked()) {
                     saveALotChosen = true;
+                    groceryStorelist.add("Save-a-lot");
                 }
                 if (aldi.isChecked()) {
                     aldiChosen = true;
+                    groceryStorelist.add("ALDI");
                 }
                 if (countyMarket.isChecked()) {
                     countyMarketChosen = true;
+                    groceryStorelist.add("County Market");
                 }
                 if (walmartSupercenter.isChecked()) {
                     walmartSupercenterChosen = true;
+                    groceryStorelist.add("Walmart Supercenter");
                 }
                 openViewOutput();
             }
